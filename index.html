@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimesh Bhavsar — Data Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --accent3: #f78166;
+      --tag-bg: #1f3a5f;
+      --tag-text: #79c0ff;
+      --radius: 8px;
+      --max: 960px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { font-weight: 600; color: var(--text); font-size: 15px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--text2); font-size: 14px; transition: color .15s; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Hero ── */
+    #hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 96px 24px 72px;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      border: 1px solid #1f6feb;
+    }
+    .hero-dot { width: 7px; height: 7px; background: var(--accent2); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 54px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    h1 span { color: var(--accent); }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text2);
+      max-width: 600px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity .15s, transform .1s;
+      cursor: pointer;
+    }
+    .btn:hover { opacity: .85; transform: translateY(-1px); text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #0d1117; }
+    .btn-secondary { background: var(--bg3); color: var(--text); border: 1px solid var(--border); }
+
+    .hero-meta {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--text2);
+      font-size: 13px;
+    }
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+    .meta-item svg { opacity: .6; }
+
+    /* ── Sections ── */
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      letter-spacing: -.5px;
+    }
+
+    /* ── Timeline cards ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1px 1fr;
+      gap: 0 24px;
+      position: relative;
+    }
+    .tl-line {
+      background: var(--border);
+      position: relative;
+    }
+    .tl-dot {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      z-index: 1;
+    }
+    .tl-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      transition: border-color .15s;
+    }
+    .tl-card:hover { border-color: var(--accent); }
+
+    .tl-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .tl-title { font-weight: 600; font-size: 16px; }
+    .tl-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text2);
+      white-space: nowrap;
+    }
+    .tl-subtitle { color: var(--text2); font-size: 14px; margin-bottom: 12px; }
+    .tl-body ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+    .tl-body li { font-size: 14px; color: var(--text2); line-height: 1.6; }
+    .tl-body li strong { color: var(--text); font-weight: 500; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56,139,253,.15);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid rgba(56,139,253,.3);
+      margin-left: 8px;
+    }
+
+    /* ── Projects grid ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .project-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: border-color .15s, transform .1s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+    .project-icon { font-size: 20px; }
+    .project-link { color: var(--text2); transition: color .15s; }
+    .project-link:hover { color: var(--accent); }
+    .project-title { font-weight: 600; font-size: 15px; }
+    .project-tech {
+      font-size: 12px;
+      color: var(--accent2);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .project-desc { font-size: 13px; color: var(--text2); line-height: 1.6; flex: 1; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    /* ── Skills ── */
+    .skills-grid { display: flex; flex-direction: column; gap: 20px; }
+    .skill-group { }
+    .skill-group-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      font-size: 13px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      transition: border-color .15s, color .15s;
+    }
+    .pill:hover { border-color: var(--accent); color: var(--text); }
+
+    /* ── Contact ── */
+    #contact { text-align: center; }
+    #contact h2 { margin-bottom: 16px; }
+    .contact-sub { color: var(--text2); max-width: 480px; margin: 0 auto 32px; }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 24px;
+      color: var(--text2);
+      font-size: 13px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .nav-links { gap: 16px; }
+      .nav-links li:nth-child(n+4) { display: none; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">NB</span>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero" style="border-top: none;">
+  <div class="hero-tag">
+    <span class="hero-dot"></span>
+    Available for opportunities
+  </div>
+  <h1>Nimesh<br /><span>Jitendra Bhavsar</span></h1>
+  <p class="hero-sub">
+    Decision Scientist &amp; Data Science Master's student at TU Dortmund.
+    I build enterprise AI systems, RAG pipelines, and predictive models that ship to production.
+  </p>
+  <div class="hero-links">
+    <a class="btn btn-primary" href="mailto:nimeshbhavsar006@gmail.com">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Get in touch
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/NimeshBhavsar" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+      GitHub
+    </a>
+    <a class="btn btn-secondary" href="https://www.linkedin.com/in/nimesh-bh/" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+  <div class="hero-meta">
+    <span class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      Dortmund, Germany · open to relocation
+    </span>
+    <span class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.92.92Z"/></svg>
+      +49 155 65785113
+    </span>
+    <span class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      English · Hindi · German (A1)
+    </span>
+  </div>
+</section>
+
+<!-- ── Experience ── -->
+<section id="experience">
+  <p class="section-label">// experience</p>
+  <h2>Work Experience</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-line"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">
+            <a href="https://drive.google.com/file/d/13RMTlsidTEFLCmQP5hAM6XNFgOWlJQT5" target="_blank">MuSigma Inc.</a>
+          </span>
+          <span class="tl-date">Jul 2024 – Jul 2025</span>
+        </div>
+        <div class="tl-subtitle">Decision Scientist &nbsp;·&nbsp; Bengaluru, India</div>
+        <div class="tl-body">
+          <ul>
+            <li>Developed <strong>Enterprise RAG systems</strong> for a Fortune-50 client, improving response accuracy through advanced retrieval optimization, semantic search, and intelligent context orchestration.</li>
+            <li>Built <strong>Agentic AI</strong> workflows for automated document parsing and intelligent information extraction using specialized LLM agents, reducing manual processing effort by <strong>15%</strong>.</li>
+            <li>Conducted <strong>A/B testing</strong> on embedding models and context windowing strategies to reduce hallucinations and improve factual consistency in enterprise-scale LLM applications.</li>
+            <li>Designed and optimized a <strong>Predictive Customer Churn Model</strong> using PyTorch and XGBoost, outperforming existing benchmarks through advanced feature engineering.</li>
+            <li>Optimized AWS cloud data storage via efficient tiering algorithms, delivering a validated projected annual cost saving of <strong>$1.8 Million</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Education ── -->
+<section id="education">
+  <p class="section-label">// education</p>
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-line"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">
+            <a href="https://drive.google.com/file/d/1oS7I4k1XaF4DJGlxWAaO4AW0KdHwUh75" target="_blank">Technical University Dortmund</a>
+            <span class="badge">Current</span>
+          </span>
+          <span class="tl-date">Oct 2025 – Present</span>
+        </div>
+        <div class="tl-subtitle">M.Sc. Data Science &nbsp;·&nbsp; Grade: 2.1/5 &nbsp;·&nbsp; 32 credits completed</div>
+        <div class="tl-body">
+          <ul>
+            <li><strong>Relevant Coursework:</strong> Applied Bayesian Data Analysis, Monte Carlo Simulation, Industrial Data Science, Deep Learning, Data Science for Dynamic Systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-line"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <span class="tl-title">
+            <a href="https://drive.google.com/file/d/1uhJKJk_aMCdEQaJ_YYWTfzUEIzZYQHqD" target="_blank">Vellore Institute of Technology</a>
+          </span>
+          <span class="tl-date">Sep 2020 – May 2024</span>
+        </div>
+        <div class="tl-subtitle">B.Tech Computer Science &nbsp;·&nbsp; CGPA: 8.00/10 &nbsp;·&nbsp; Vellore, India</div>
+        <div class="tl-body">
+          <ul>
+            <li><strong>Achievement:</strong> Special Achiever Award — 1st Position in an International Event organized by <strong>NASA</strong>.</li>
+            <li><strong>Leadership:</strong> <a href="https://drive.google.com/file/d/1NDBjCSFyY7hazB7o_EQTSosphDYL6pyY" target="_blank">President, SAE Team Infinix</a> — Official NASA HERC Team.</li>
+            <li><strong>Relevant Coursework:</strong> Database Management, Programming for Data Science, NLP, Information Security Analysis, Blockchain, Artificial Intelligence, Social and Information Networks.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <p class="section-label">// projects</p>
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🏠</span>
+        <a class="project-link" href="https://github.com/NimeshBhavsar/ABDA_Project_Kings_County_Dataset" target="_blank" rel="noopener" title="View on GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="project-title">Neighborhood Heterogeneity in Housing Prices</div>
+      <div class="project-tech">Bayesian Multilevel Modeling</div>
+      <div class="project-desc">Analyzed 21,613 housing transactions across 70 zip codes using a Bayesian hierarchical framework. Implemented multilevel Gaussian models in R (brms) with LOO-CV evaluation; varying-slope models best captured local market heterogeneity.</div>
+      <div class="project-tags">
+        <span class="tag">R</span><span class="tag">brms</span><span class="tag">Bayesian</span><span class="tag">Statistics</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🌀</span>
+        <a class="project-link" href="https://github.com/NimeshBhavsar/DS4DS-Unknown-Ordinary-Differential-Equation" target="_blank" rel="noopener" title="View on GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="project-title">Learning Unknown Dynamical Systems via SINDy</div>
+      <div class="project-tech">Sparse Identification of Nonlinear Dynamics</div>
+      <div class="project-desc">Identified governing equations of an unknown 2D nonlinear dynamical system from 200 noisy trajectories using SINDy + LASSO. Recovered interpretable ODEs validated via forward simulation (MSE 2.9×10⁻⁴ over a 100-step horizon).</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">SINDy</span><span class="tag">LASSO</span><span class="tag">Dynamics</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🎯</span>
+        <a class="project-link" href="https://github.com/NimeshBhavsar/Cart-Pole-Dynamics/" target="_blank" rel="noopener" title="View on GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="project-title">Cart-Pole Swing-Up Control</div>
+      <div class="project-tech">MPC · SAC · Neural Network Surrogate</div>
+      <div class="project-desc">Unified implementation and direct comparison of three control strategies: Nonlinear MPC, Soft Actor-Critic RL, and MPC with a PyTorch MLP surrogate model. Evaluated on upright-time ratio, control effort, and cart displacement.</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">RL</span><span class="tag">MPC</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🏡</span>
+        <a class="project-link" href="https://github.com/NimeshBhavsar/Studierendenwerk-Dortmund-Freie-Zimmer" target="_blank" rel="noopener" title="View on GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="project-title">Studierendenwerk Dortmund Freie Zimmer</div>
+      <div class="project-tech">Student Accommodation Scraper</div>
+      <div class="project-desc">Web scraper to automatically monitor available student accommodation listings from Studierendenwerk Dortmund. Extracts room data (location, price, amenities) and supports notification integration. I got my apartment using this :)</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Web Scraping</span><span class="tag">Automation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">📊</span>
+        <a class="project-link" href="https://github.com/NimeshBhavsar/beverage-market-abm-validation" target="_blank" rel="noopener" title="View on GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="project-title">RealGames Simulation Parameter Analysis</div>
+      <div class="project-tech">Agent-Based Market Simulation</div>
+      <div class="project-desc">Parameter sensitivity framework for an agent-based beverage market simulation across 67 runs. Used Random Forest, XGBoost, SHAP, and ALE plots to identify how behavioral, pricing, and marketing parameters drive brand-level market outcomes.</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">ABM</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <p class="section-label">// skills</p>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Programming Languages</div>
+      <div class="skill-pills">
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Java</span>
+        <span class="pill">C++</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Machine Learning &amp; AI</div>
+      <div class="skill-pills">
+        <span class="pill">RAG Systems</span>
+        <span class="pill">LLM Agents</span>
+        <span class="pill">PyTorch</span>
+        <span class="pill">XGBoost</span>
+        <span class="pill">scikit-learn</span>
+        <span class="pill">Random Forest</span>
+        <span class="pill">SVM</span>
+        <span class="pill">PCA</span>
+        <span class="pill">NLP (TF-IDF, Sentiment)</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Statistical Modeling</div>
+      <div class="skill-pills">
+        <span class="pill">Bayesian Hierarchical Modeling</span>
+        <span class="pill">GLM</span>
+        <span class="pill">Regression Analysis</span>
+        <span class="pill">Hypothesis Testing</span>
+        <span class="pill">Time Series Analysis</span>
+        <span class="pill">Stochastic Processes</span>
+        <span class="pill">Monte Carlo</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Data &amp; Analysis Libraries</div>
+      <div class="skill-pills">
+        <span class="pill">pandas</span>
+        <span class="pill">NumPy</span>
+        <span class="pill">SciPy</span>
+        <span class="pill">statsmodels</span>
+        <span class="pill">brms</span>
+        <span class="pill">rstan</span>
+        <span class="pill">tidyverse</span>
+        <span class="pill">ggplot2</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Visualization &amp; Reporting</div>
+      <div class="skill-pills">
+        <span class="pill">Power BI</span>
+        <span class="pill">Tableau</span>
+        <span class="pill">Matplotlib</span>
+        <span class="pill">Seaborn</span>
+        <span class="pill">Plotly</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Tools &amp; Workflow</div>
+      <div class="skill-pills">
+        <span class="pill">Git / GitHub</span>
+        <span class="pill">AWS</span>
+        <span class="pill">LaTeX</span>
+        <span class="pill">R Markdown</span>
+        <span class="pill">VS Code</span>
+        <span class="pill">Excel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <p class="section-label">// contact</p>
+  <h2>Let's Connect</h2>
+  <p class="contact-sub">I'm actively looking for roles in data science, ML engineering, and AI research. Feel free to reach out!</p>
+  <div class="contact-links">
+    <a class="btn btn-primary" href="mailto:nimeshbhavsar006@gmail.com">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      nimeshbhavsar006@gmail.com
+    </a>
+    <a class="btn btn-secondary" href="https://www.linkedin.com/in/nimesh-bh/" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      linkedin.com/in/nimesh-bh
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/NimeshBhavsar" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+      github.com/NimeshBhavsar
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <span>Built by Nimesh Bhavsar · <a href="https://github.com/NimeshBhavsar/NimeshBhavsar.github.io" target="_blank">Source</a></span>
+</footer>
+
+</body>
+</html>

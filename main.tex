@@ -1,0 +1,244 @@
+%-------------------------
+% Resume in Latex
+% Author : Nimesh Bhavsar
+% Based off of: https://github.com/NimeshBhavsar/Resume
+% License : None
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{tgpagella}
+\usepackage{libertinus}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+\usepackage[sfdefault]{roboto}
+%\usepackage[sfdefault]{noto-sans}
+%\usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.75\textwidth}@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\star$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+% \end{tabular*}
+\begin{center}
+    \textbf{\Huge \scshape Nimesh Jitendra Bhavsar}\\ \vspace{5pt}
+     +49 15565785113 $|$
+    \href{mailto:nimeshbhavsar006@gmail.com}{nimeshbhavsar006@gmail.com} $|$
+    \href{https://www.linkedin.com/in/nimesh-bh/}{linkedin.com/in/nimesh-bh/} $|$
+    \href{https://github.com/NimeshBhavsar}{github.com/NimeshBhavsar}
+    
+    Date of Birth: 01 April 2002 $|$ Nationality: Indian $|$ Location: Dortmund, Germany (open to relocation)
+\end{center}
+
+
+
+%-----------EXPERIENCE-----------
+\section{\textbf{Experience}}
+  \resumeSubHeadingListStart
+\vspace{6pt}
+  \resumeSubheading
+  {\href{https://drive.google.com/file/d/13RMTlsidTEFLCmQP5hAM6XNFgOWlJQT5}{\textbf{MuSigma Inc.}} }{Bengaluru, India}
+{Decision Scientist}{July 2024 - July 2025}
+  \vspace{2pt}
+  \resumeItemListStart
+    \resumeItem{
+    Developed \textbf{Enterprise RAG systems} for Fortune-50 client, improving response accuracy and contextual relevance through advanced retrieval optimization, semantic search, and intelligent context orchestration.}
+    \resumeItem{Developed \textbf{Agentic AI} workflows for automated document parsing and intelligent information extraction using specialized LLM agents, reducing manual processing effort by 15\% and improving operational efficiency.}
+    \resumeItem{Conducted \textbf{A/B testing} on embedding models and context windowing strategies to reduce hallucinations and improve factual consistency in enterprise-scale LLM applications.}
+    \resumeItem{Designed and optimized a \textbf{Predictive Customer Churn Model} using PyTorch and XGBoost, improving customer retention strategies and outperforming existing benchmark models through advanced feature engineering and model tuning.}
+    \resumeItem{Optimized AWS cloud data contents through efficient storage tiering algorithm, delivering a validated projected annual cost saving of \textbf{\$1,8 Million}.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+  \resumeSubHeadingListStart
+\vspace{6pt}
+  \resumeSubheading
+      {\href{https://drive.google.com/file/d/1oS7I4k1XaF4DJGlxWAaO4AW0KdHwUh75}{\textcolor{black}{Technical University Dortmund} }}
+        {Dortmund, NRW, Germany}
+      {Master of Science in Data Science, Grade: 2,1/5} {October 2025- Present}
+      \vspace{2pt}
+      \resumeItemListStart
+      \resumeItem{\textbf{Credits Completed:} 32}
+      \resumeItem{\textbf{Relevant Coursework}: Applied Bayesian Data Analysis, Monte Carlo Simulation, Industrial Data Science, Deep Learning, Data Science for Dynamic Systems } 
+      \resumeItemListEnd
+\resumeSubheading
+{\href{https://drive.google.com/file/d/1uhJKJk_aMCdEQaJ_YYWTfzUEIzZYQHqD}{\textcolor{black}{Vellore Institute of Technology}}}
+  {Vellore, India}
+  {Bachelor of Technology in Computer Science, CGPA: 8,00/10}{September 2020- May 2024}
+  \vspace{2pt}
+  \resumeItemListStart
+    \resumeItem{\textbf{Achievement:} Special Achiever award for Winning 1st Position in an International Event organised by \textbf{NASA}}
+    \resumeItem{\textbf{Leadership:} \href{https://drive.google.com/file/d/1NDBjCSFyY7hazB7o_EQTSosphDYL6pyY}{President, SAE Team Infinix (Official NASA HERC Team)}}
+    \resumeItem{\textbf{Relevant Coursework: } Database Management,  Programming for Data Science, Information Security Analysis, Natural Language Processing, Blockchain and Cryptocurrency, Social and Information Networks, Artificial Intelligence
+}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{\textbf{Projects}}
+
+\resumeSubHeadingListStart
+\vspace{4pt}
+\resumeProjectHeading{
+\textbf{\href{https://github.com/NimeshBhavsar/ABDA_Project_Kings_County_Dataset}{\textcolor{blue}{Neighborhood Heterogeneity in Housing Prices}}} 
+$|$ \emph{Bayesian Multilevel Modeling}
+}{}
+\vspace{2pt}
+\resumeItemListStart
+  \resumeItem{Analyzed \textbf{21,613 housing transactions} across \textbf{70 zip codes} using a Bayesian hierarchical framework to study neighborhood-level price heterogeneity.}
+  \resumeItem{Implemented multilevel Gaussian models in \textbf{R (brms)}, progressing from fully pooled to varying-intercept and varying-slope specifications with log-transformed housing prices and weakly informative priors.}
+  \resumeItem{Evaluated models using posterior predictive checks, residual and MCMC diagnostics, and LOO--CV (ELPD); 95\% credible intervals on conditional effects showed that \textbf{varying-slope models} best capture local market heterogeneity.}
+\resumeItemListEnd
+\newpage
+
+\resumeProjectHeading{
+\textbf{\href{https://github.com/NimeshBhavsar/DS4DS-Unknown-Ordinary-Differential-Equation}{\textcolor{blue}{Learning Unknown Dynamical Systems via SINDy}}} 
+$|$ \emph{Sparse Identification of Nonlinear Dynamics}
+}{}
+\vspace{2pt}
+\resumeItemListStart
+  \resumeItem{Identified the governing equations of an unknown 2D nonlinear dynamical system from \textbf{200 noisy trajectories} (201 time steps each) using Sparse Identification of Nonlinear Dynamics (SINDy).}
+  \resumeItem{Implemented the full SINDy pipeline, including numerical derivative estimation, nonlinear library construction, and \textbf{sparse regression (LASSO).}}
+  \resumeItem{Recovered an interpretable ODE capturing \textbf{inward-spiraling dynamics} toward a stable equilibrium, validated via forward simulation on unseen initial conditions (\textbf{MSE} $2.9 \times 10^{-4}$ over a 100-step horizon), demonstrating robustness under Gaussian noise.}
+\resumeItemListEnd
+
+
+\resumeProjectHeading{
+\textbf{\href{https://github.com/NimeshBhavsar/Cart-Pole-Dynamics/}{\textcolor{blue}{Cart-Pole Swing-Up Control via Data-Driven and Optimal Methods}}} 
+$|$ \emph{Dynamic System Controller }
+}{}
+\vspace{2pt}
+\resumeItemListStart
+  \resumeItem{Unified the implementation and direct comparison of three advanced control strategies-Nonlinear \textbf{Model Predictive Control (MPC), Soft Actor-Critic (SAC) reinforcement learning, and MPC with neural network (NN)} surrogate dynamics-for the classic cart-pole swing-up task.}
+  \resumeItem{Collected transition data by simulating ground-truth dynamics, trained a PyTorch MLP to model state transitions, and seamlessly embedded the learned model within the MPC prediction/optimization loop for model-based RL.}
+  \resumeItem{Quantitatively evaluated all methods on relevant closed-loop metrics: upright-time ratio (within angle threshold), mean control effort, and maximum cart displacement, reporting comparative results in reproducible experiments.}
+\resumeItemListEnd
+
+\resumeProjectHeading{
+\textbf{\href{https://github.com/NimeshBhavsar/Studierendenwerk-Dortmund-Freie-Zimmer}{\textcolor{blue}{Studierendenwerk Dortmund Freie Zimmer}}} 
+$|$ \emph{Student Accommodation Availability Scraper}
+}{}
+\vspace{2pt}
+\resumeItemListStart
+  \resumeItem{Developed a \textbf{web scraper} to automatically collect and monitor available student accommodation listings from Studierendenwerk Dortmund’s official website.}
+  \resumeItem{Extracted detailed room data (e.g., location, price, and amenities) by parsing website content, enabling aggregation and streamlined presentation of vacant room offers.}
+  \resumeItem{IFacilitated up-to-date visibility for students searching for accommodation, supporting integration with notification systems to alert interested users when new rooms become available. \textbf{I got accommodation using this :)} }
+\resumeItemListEnd
+
+\resumeProjectHeading{
+\textbf{\href{https://github.com/NimeshBhavsar/beverage-market-abm-validation}{\textcolor{blue}{RealGames Simulation Parameter Analysis}}} 
+$|$ \emph{Agent-Based Market Simulation \& Predictive Modeling}
+}{}
+\vspace{2pt}
+\resumeItemListStart
+  \resumeItem{Designed and validated a comprehensive \textbf{parameter sensitivity framework} for an agent-based beverage market simulation, evaluating how behavioral, marketing, pricing, and physiological parameters influence market share, revenue, and adoption outcomes across 67 experimental simulation runs.}
+  \resumeItem{Implemented a full simulation analytics pipeline integrating \textbf{Bayesian behavior models}, factorial experimental design, API-driven simulation execution, exploratory data analysis, correlation analysis, temporal trend analysis, and predictive modeling using Random Forest and XGBoost.}
+  \resumeItem{Built interpretable ML models to predict brand-level performance metrics (market share, units sold, revenue), and analyzed feature importance using \textbf{SHAP and ALE} plots to identify the impact of parameters such as price sensitivity, marketing effectiveness, awareness decay, and automation rate on consumer behavior and brand dominance.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{{\textbf{Skills}}}
+\resumeItemListStart
+  \resumeItem{\textbf{Spoken Languages:} English (fluent), Hindi (native), German (A1 – ongoing).}
+  \resumeItem{\textbf{Programming Languages:} Python, JAVA, R, SQL, C++}
+  \resumeItem{\textbf{Statistical Modeling \& Methods:} Bayesian Hierarchical Modeling, Generalized Linear Models (GLM), Regression Analysis, Hypothesis Testing (t-test, ANOVA, $\chi^2$), Time Series Analysis, Stochastic Processes (Markov Chains, Poisson Processes).}
+  \resumeItem{\textbf{Machine Learning \& NLP:} Supervised Learning (Random Forest, SVM), Dimensionality Reduction (PCA), Clustering (K-means), Natural Language Processing (TF--IDF, Topic Modeling, Sentiment Analysis).}
+  \resumeItem{\textbf{Data Analysis Libraries:} pandas, NumPy, SciPy, statsmodels, scikit-learn, tidyverse (dplyr, ggplot2), brms, rstan.}
+  \resumeItem{\textbf{Data Visualization \& Reporting:} Power BI, Tableau, Matplotlib, Seaborn, Plotly; exploratory and model-based visualization.}
+  \resumeItem{\textbf{Tools \& Workflow:} Git/GitHub, LaTeX, R Markdown, Excel (data analysis), VS Code.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\end{document}
