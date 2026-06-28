@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Nimesh Bhavsar — Decision Scientist & Data Science MS Student at TU Dortmund. Building enterprise AI, RAG pipelines, and predictive models." />
   <title>Nimesh Bhavsar — Data Scientist</title>
+  <link rel="icon" href="logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -37,8 +38,9 @@
     nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);background:rgba(5,8,16,.6);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border-bottom:1px solid var(--border);transition:background .3s}
     nav.scrolled{background:rgba(5,8,16,.95)}
     .ni{max-width:var(--max);margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:500;color:var(--text);text-decoration:none}
-    .logo span{color:var(--accent)}
+    .logo{display:flex;align-items:center;text-decoration:none}
+    .logo-img{height:50px;width:auto;object-fit:contain;filter:drop-shadow(0 0 5px rgba(96,165,250,.4));transition:filter .25s}
+    .logo:hover .logo-img{filter:drop-shadow(0 0 12px rgba(96,165,250,.8)) brightness(1.1)}
     .nl{display:flex;gap:4px;list-style:none}
     .nl a{padding:6px 14px;border-radius:8px;color:var(--text2);font-size:14px;font-weight:500;text-decoration:none;transition:color .15s,background .15s;position:relative}
     .nl a:hover,.nl a.act{color:var(--text);background:rgba(255,255,255,.06)}
@@ -77,7 +79,9 @@
     .blob:nth-child(3){width:280px;height:280px;background:radial-gradient(circle,rgba(52,211,153,.08),transparent 70%);bottom:80px;left:35%;animation-delay:-6s}
     @keyframes bf{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(18px,-18px) scale(1.05)}66%{transform:translate(-12px,10px) scale(.95)}}
 
-    .hc{position:relative;z-index:1;padding:56px 0 80px}
+    .hc{position:relative;z-index:1;padding:56px 0 80px;display:grid;grid-template-columns:1fr 360px;gap:72px;align-items:center}
+    .hc-left{min-width:0}
+    .hc-right{display:flex;align-items:center;justify-content:center}
     .hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.22);border-radius:100px;padding:6px 16px 6px 10px;font-size:13px;font-weight:500;color:var(--accent);margin-bottom:28px}
     .hdot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 6px var(--green);animation:pd 2s ease-in-out infinite}
     @keyframes pd{0%,100%{box-shadow:0 0 4px var(--green)}50%{box-shadow:0 0 14px var(--green)}}
@@ -109,6 +113,32 @@
     .si:hover{background:var(--bg3)}
     .sv{font-size:26px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
     .sl{font-size:11px;color:var(--text3);margin-top:4px;line-height:1.4}
+
+    /* PROFILE FRAME */
+    .prof-wrap{position:relative;width:360px;height:360px;flex-shrink:0}
+    .prof-ring{position:absolute;border-radius:50%;border:1px solid transparent;animation:profSpin linear infinite}
+    .pr1{inset:-18px;border-color:rgba(96,165,250,.32) rgba(96,165,250,.04) rgba(96,165,250,.32) rgba(96,165,250,.04);animation-duration:12s}
+    .pr2{inset:-38px;border-color:rgba(129,140,248,.2) transparent rgba(129,140,248,.2) transparent;animation-duration:22s;animation-direction:reverse}
+    .pr3{inset:-60px;border-color:rgba(52,211,153,.12);border-style:dashed;animation-duration:36s}
+    @keyframes profSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .prof-circle{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:2px solid rgba(96,165,250,.5);box-shadow:0 0 0 1px rgba(96,165,250,.09),0 0 48px rgba(96,165,250,.2),0 0 96px rgba(96,165,250,.07)}
+    .prof-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    .prof-glow{position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse at 50% -5%,rgba(96,165,250,.16),transparent 60%);pointer-events:none}
+    .prof-scan{position:absolute;inset:0;border-radius:50%;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);pointer-events:none}
+    .prof-hud{position:absolute;inset:0;pointer-events:none}
+    .phud{position:absolute;width:18px;height:18px;border-color:rgba(96,165,250,.7);border-style:solid}
+    .phud.tl{top:9%;left:9%;border-width:2px 0 0 2px}
+    .phud.tr{top:9%;right:9%;border-width:2px 2px 0 0}
+    .phud.bl{bottom:9%;left:9%;border-width:0 0 2px 2px}
+    .phud.br{bottom:9%;right:9%;border-width:0 2px 2px 0}
+    .prof-orbit{position:absolute;inset:-18px;border-radius:50%;animation:profSpin 9s linear infinite;pointer-events:none}
+    .prof-orbit::after{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent),0 0 22px rgba(96,165,250,.6);top:-4px;left:50%;margin-left:-4px}
+    .prof-badge{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.5px;color:var(--accent);background:rgba(5,8,16,.88);border:1px solid rgba(96,165,250,.28);border-radius:6px;padding:4px 12px;white-space:nowrap;backdrop-filter:blur(8px)}
+    .pb1{bottom:-8px;left:-20px;animation:profFloat 4s ease-in-out infinite}
+    .pb2{top:-8px;right:-20px;animation:profFloat 4s ease-in-out infinite;animation-delay:-2s}
+    .pb3{bottom:-8px;right:-20px;animation:profFloat 4s ease-in-out infinite;animation-delay:-4s}
+    .pb4{top:-8px;left:-20px;animation:profFloat 4s ease-in-out infinite;animation-delay:-6s}
+    @keyframes profFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
     /* ABOUT */
     .ag{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
@@ -207,6 +237,12 @@
     #st:hover{border-color:var(--accent);color:var(--accent)}
 
     /* RESPONSIVE */
+    @media(max-width:920px){
+      .hc{grid-template-columns:1fr;gap:48px}
+      .hc-right{justify-content:center}
+      .prof-wrap{width:260px;height:260px}
+      .pr3{display:none}
+    }
     @media(max-width:768px){
       .nl{display:none}.hbg{display:flex}
       .ag{grid-template-columns:1fr}.skl{grid-template-columns:1fr}
@@ -215,6 +251,7 @@
     }
     @media(max-width:480px){
       .ac{grid-template-columns:1fr}.h1.hn{letter-spacing:-2px}
+      .prof-wrap{width:220px;height:220px}
     }
   </style>
 </head>
@@ -230,7 +267,7 @@
 <!-- NAV -->
 <nav id="nav">
   <div class="ni">
-    <a href="#home" class="logo"><span>[</span>NB<span>]</span></a>
+    <a href="#home" class="logo"><img src="logo.png" alt="Nimesh Bhavsar" class="logo-img" /></a>
     <ul class="nl">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -260,31 +297,56 @@
   </div>
   <div class="wrap">
     <div class="hc">
-      <div class="hbadge"><span class="hdot"></span>Open to full-time &amp; working student roles</div>
-      <h1 class="hn"><span class="gt">Nimesh</span><br/><span class="gt">Bhavsar</span></h1>
-      <div class="htw">
-        <span class="htw-pre">I build&nbsp;</span><span id="tw"></span><span class="cb"></span>
+      <div class="hc-left">
+        <div class="hbadge"><span class="hdot"></span>Open to full-time &amp; working student roles</div>
+        <h1 class="hn"><span class="gt">Nimesh</span><br/><span class="gt">Bhavsar</span></h1>
+        <div class="htw">
+          <span class="htw-pre">I build&nbsp;</span><span id="tw"></span><span class="cb"></span>
+        </div>
+        <p class="hdesc">Decision Scientist turned Data Science grad student. I build enterprise AI systems — RAG pipelines, agentic workflows, and predictive models — that ship to production and actually work.</p>
+        <div class="hcta">
+          <a href="mailto:nimeshbhavsar006@gmail.com" class="btn bp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Get in touch
+          </a>
+          <a href="https://github.com/NimeshBhavsar" target="_blank" rel="noopener" class="btn bg">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/nimesh-bh/" target="_blank" rel="noopener" class="btn bg">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="stats">
+          <div class="si"><div class="sv" data-count="1.8" data-prefix="$" data-suffix="M+">$0</div><div class="sl">AWS cost savings delivered</div></div>
+          <div class="si"><div class="sv" data-count="15" data-suffix="%">0%</div><div class="sl">Manual processing reduced</div></div>
+          <div class="si"><div class="sv" data-count="21613" data-sep="1">0</div><div class="sl">Housing records analyzed</div></div>
+          <div class="si"><div class="sv" data-count="5">0</div><div class="sl">Open source projects</div></div>
+        </div>
       </div>
-      <p class="hdesc">Decision Scientist turned Data Science grad student. I build enterprise AI systems — RAG pipelines, agentic workflows, and predictive models — that ship to production and actually work.</p>
-      <div class="hcta">
-        <a href="mailto:nimeshbhavsar006@gmail.com" class="btn bp">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Get in touch
-        </a>
-        <a href="https://github.com/NimeshBhavsar" target="_blank" rel="noopener" class="btn bg">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/nimesh-bh/" target="_blank" rel="noopener" class="btn bg">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-      <div class="stats">
-        <div class="si"><div class="sv" data-count="1.8" data-prefix="$" data-suffix="M+">$0</div><div class="sl">AWS cost savings delivered</div></div>
-        <div class="si"><div class="sv" data-count="15" data-suffix="%">0%</div><div class="sl">Manual processing reduced</div></div>
-        <div class="si"><div class="sv" data-count="21613" data-sep="1">0</div><div class="sl">Housing records analyzed</div></div>
-        <div class="si"><div class="sv" data-count="5">0</div><div class="sl">Open source projects</div></div>
+      <div class="hc-right">
+        <div class="prof-wrap rev s2">
+          <div class="prof-ring pr3"></div>
+          <div class="prof-ring pr2"></div>
+          <div class="prof-ring pr1"></div>
+          <div class="prof-orbit"></div>
+          <div class="prof-circle">
+            <img src="profile_square.png" alt="Nimesh Bhavsar" class="prof-img" />
+            <div class="prof-glow"></div>
+            <div class="prof-scan"></div>
+          </div>
+          <div class="prof-hud">
+            <div class="phud tl"></div>
+            <div class="phud tr"></div>
+            <div class="phud bl"></div>
+            <div class="phud br"></div>
+          </div>
+          <div class="prof-badge pb1">Ex-Decision Scientist</div>
+          <div class="prof-badge pb2">MBA specialization in AI/ML</div>
+          <div class="prof-badge pb3">#OpenToWork</div>
+          <div class="prof-badge pb4">M.Sc. Data Science</div>
+        </div>
       </div>
     </div>
   </div>
